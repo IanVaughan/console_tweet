@@ -70,7 +70,7 @@ module ConsoleTweet
         self.since_id = home_timeline.last['id']
       end
     end
-    
+
     # Send a tweet for the user
     def tweet(*args)
       load_default_token
@@ -123,7 +123,7 @@ module ConsoleTweet
       tokens = {:default => { :token => @access_token.token, :secret => @access_token.secret }}
       save_tokens(tokens)
     end
-    
+
     # Returns the 20 most recent @replies / mentions
     def replies(*args)
       load_default_token
@@ -144,10 +144,10 @@ module ConsoleTweet
       puts
       puts "#{CommandColor}twitter#{DefaultColor} View your timeline, since last view"
       puts "#{CommandColor}twitter setup#{DefaultColor} Setup your account"
-      puts "#{CommandColor}twitter status#{DefaultColor} Get your most recent status" 
+      puts "#{CommandColor}twitter status#{DefaultColor} Get your most recent status"
       puts "#{CommandColor}twitter tweet \"Hello World\"#{DefaultColor} Send out a tweet"
       puts "#{CommandColor}twitter show [username]#{DefaultColor} Show the timeline for a user"
-      puts "#{CommandColor}twitter replies#{DefaultColor} Get the most recent @replies and mentions" 
+      puts "#{CommandColor}twitter replies#{DefaultColor} Get the most recent @replies and mentions"
     end
 
     # Show error message with help below it
@@ -198,7 +198,7 @@ module ConsoleTweet
     def self.get_input
       STDIN.gets.strip.chomp
     end
-    
+
     # Getter for since_id in ~/.twitter file
     def since_id
       load_default_token[:since_id]
@@ -210,7 +210,7 @@ module ConsoleTweet
       tokens[:since_id] = id
       save_tokens(:default => tokens)
     end
-    
+
     # Getter for since_id_replies in ~/.twitter file
     def since_id_replies
       load_default_token[:since_id_replies]
